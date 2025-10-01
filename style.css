@@ -65,17 +65,54 @@ body.light-mode .contact .socials a:hover { background: #A00000; transform: tran
 /* ---------------------------------
    HERO
 ----------------------------------- */
-.hero { display: flex; align-items: center; justify-content: center; padding: 5rem 0; }
-.hero-content { display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
+.hero { display: flex; align-items: center; justify-content: center; padding: 5rem 0; position: relative; }
+.hero-content { display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; z-index: 1; }
 .hero-text { flex: 1; }
 .hero-text h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-.highlight-name { color: #8B0000; }
+.highlight-name { color: #8B0000; position: relative; cursor: pointer; transition: color 0.3s ease; }
+.highlight-name::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #ff4c4c;
+  transition: width 0.3s ease;
+}
+.highlight-name:hover {
+  color: #ff4c4c;
+}
+.highlight-name:hover::after {
+  width: 100%;
+}
 .hero-text p { font-size: 1.2rem; margin-bottom: 2rem; }
 .hero-btns { display: flex; gap: 1rem; }
 .hero-image { flex: 1; }
-.hero-image img { width: 300px; border-radius: 50%; border: 5px solid #8B0000; }
+.hero-image img {
+     position: relative;
+  z-index: 1;
+  width: 300px;
+  border-radius: 50%;
+  border: 5px solid #8B0000;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.hero-image img:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 15px 25px rgba(255, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.6), 0 0 60px rgba(255, 0, 0, 0.4);
+  animation: glowPulse 1.5s infinite alternate;
+}
 .cursor { display: inline-block; width: 2px; background-color: #8B0000; margin-left: 2px; animation: blink 0.7s infinite; }
 @keyframes blink { 50% { background-color: transparent; } }
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 15px rgba(139,0,0,0.6), 0 0 30px rgba(139,0,0,0.4), 0 0 45px rgba(139,0,0,0.2);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(139,0,0,0.9), 0 0 50px rgba(139,0,0,0.7), 0 0 75px rgba(139,0,0,0.5);
+  }
+}
 
 /* ---------------------------------
    BUTTONS
@@ -121,24 +158,8 @@ body.light-mode .contact .socials a:hover { background: #A00000; transform: tran
 .input-group input, .input-group textarea { width: 100%; border: none; outline: none; background: transparent; color: #fff; font-size: 1rem; }
 .input-group.textarea { align-items: flex-start; }
 .input-group textarea { height: 120px; resize: none; }
-
-/* Contact social links */
-.contact .socials {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-.contact .socials a {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  font-weight: 600;
-  color: #fff;
-  background: #8B0000;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
+.contact .socials { display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
+.contact .socials a { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 30px; font-weight: 600; color: #fff; background: #8B0000; transition: all 0.3s ease; text-decoration: none; }
 .contact .socials a:hover { background: #A00000; transform: translateY(-2px); }
 
 /* ---------------------------------
@@ -169,7 +190,6 @@ footer { background: #1f1f1f; padding: 2rem 0; text-align: center; }
 /* Floating Particles */
 .particles { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
 .particles span { position: absolute; display: block; width: 20px; height: 20px; background: rgba(178,34,34,0.7); border-radius: 50%; animation: floatParticles linear infinite; opacity: 0.6; }
-
 @keyframes floatParticles { 0% { transform: translateY(100vh) scale(0.5); } 100% { transform: translateY(-10vh) scale(1); } }
 
 /* ---------------------------------
