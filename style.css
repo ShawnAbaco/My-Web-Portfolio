@@ -26,13 +26,9 @@ body.light-mode .skills span { background: #1f1f1f; color: #fff; }
 body.light-mode .hamburger { color: #000; }
 body.light-mode .contact .socials a { color: #fff; background: #8B0000; }
 body.light-mode .contact .socials a:hover { background: #A00000; transform: translateY(-2px) rotate(-1deg); }
-body.light-mode .marquee-label {
-  color: #222; /* dark text for light background */
-}
+body.light-mode .marquee-label { color: #222; }
 /* Light mode for Projects title */
-body.light-mode .projects h2 {
-  color: #ffffff; /* dark text for light background */
-}
+body.light-mode .projects h2 { color: #ffffff; }
 /* NAVBAR LIGHT MODE - DESKTOP */
 @media (min-width: 769px) {
   body.light-mode .nav-links a { color: #222; }
@@ -183,19 +179,6 @@ footer { background: #1f1f1f; padding: 2rem 0; text-align: center; }
   .nav-links { position: absolute; top: 70px; left: 0; right: 0; background: #1f1f1f; flex-direction: column; align-items: center; gap: 1rem; display: none; padding: 1rem 0; z-index: 999; }
   .nav-links.show { display: flex; }
   .hamburger { display: block; }
-}
-
-/* ---------------------------------
-   FLOATING PARTICLES
------------------------------------ */
-.particles { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
-.particles span { position: absolute; display: block; width: 20px; height: 20px; background: rgba(178,34,34,0.7); border-radius: 50%; animation: floatParticles linear infinite; opacity: 0.6; }
-@keyframes floatParticles { 0% { transform: translateY(100vh) scale(0.5); } 100% { transform: translateY(-10vh) scale(1); } }
-
-/* ---------------------------------
-   CONTACT RESPONSIVE
------------------------------------ */
-@media (max-width: 768px) {
   .contact { padding: 3rem 1rem; }
   .contact-form { width: 100%; padding: 0 1rem; }
   .input-group { flex-direction: column; align-items: stretch; padding: 0.6rem; }
@@ -210,38 +193,34 @@ footer { background: #1f1f1f; padding: 2rem 0; text-align: center; }
    MARQUEE / GALLERY
 ----------------------------------- */
 .marquee-section {
-  padding-top: 4rem; /* space above label */
+  padding-top: 4rem;
   text-align: center;
   margin-bottom: 4rem;
 }
-
 .marquee-label {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   color: #f5f5f5;
 }
-
 .marquee {
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 280px; /* slightly taller to prevent clipping */
+  height: auto; /* auto so images never get cut */
   mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  padding: 1rem 0;
 }
-
 .marquee-track {
   display: flex;
   gap: 1rem;
   animation: marqueeAnim 20s linear infinite;
 }
-
 .photo-wrapper {
-  overflow: visible; /* allows image to grow outside container */
-  perspective: 800px; /* for 3D hover effect */
+  overflow: visible;
+  perspective: 800px;
 }
-
 .marquee-track img {
   width: 220px;
   max-width: 18vw;
@@ -252,46 +231,19 @@ footer { background: #1f1f1f; padding: 2rem 0; text-align: center; }
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   display: block;
 }
-
-/* Remove hover effect completely */
 .marquee-track img:hover {
   transform: none;
   box-shadow: none;
 }
-
 @keyframes marqueeAnim {
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0%); }
 }
-
 @media (max-width: 768px) {
-  .marquee { height: 200px; }
-.marquee-track img {
-     width: 300px;       /* bigger images */
-    max-width: 80vw;    /* allow images to scale on small screens */
-    height: auto;
-    border-radius: 15px;
-    border: 3px solid #8B0000;
-    object-fit: cover;
-    transition: none;
-}  .marquee-label { font-size: 1.5rem; }
-}
-@media (max-width: 768px) {
-  .marquee { 
-    height: 250px; /* slightly taller */
-  }
-
   .marquee-track img {
-    width: 300px;       /* bigger images */
-    max-width: 80vw;    /* allow images to scale on small screens */
+    width: 300px;
+    max-width: 80vw;
     height: auto;
-    border-radius: 15px;
-    border: 3px solid #8B0000;
-    object-fit: cover;
-    transition: none;
   }
-
-  .marquee-label { 
-    font-size: 1.8rem;  /* slightly bigger label on mobile */
-  }
+  .marquee-label { font-size: 1.8rem; }
 }
