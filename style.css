@@ -26,6 +26,22 @@ body.light-mode .skills span {
   background: #1f1f1f; /* dark gray */
   color: #fff; /* keep text white */
 }
+/* Light mode adjustments for navbar elements */
+body.light-mode .hamburger {
+  color: #000; /* hamburger button turns black */
+}
+
+/* Keep mobile nav links white in light mode */
+body.light-mode .nav-links a {
+  color: #fff; /* links remain white */
+}
+
+/* Optional: keep hover effect for mobile nav links consistent */
+body.light-mode .nav-links a:hover, 
+body.light-mode .nav-links a.active {
+  color: #fff; /* still white on hover/active */
+}
+
 
 /* ---------------------------------
    NAVBAR
