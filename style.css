@@ -26,13 +26,24 @@ body.light-mode .logo span { color: #000; }
 body.light-mode .skills span { background: #1f1f1f; color: #fff; }
 /* Hamburger black in light mode */
 body.light-mode .hamburger { color: #000; }
-/* Mobile nav links white, hover/active maroon */
-body.light-mode .nav-links a { color: #fff; }
-body.light-mode .nav-links a:hover, 
-body.light-mode .nav-links a.active { color: #8B0000; }
 /* Contact/social buttons light mode */
 body.light-mode .contact .socials a { color: #fff; background: #8B0000; }
 body.light-mode .contact .socials a:hover { background: #A00000; transform: translateY(-2px); }
+
+/* NAVBAR LIGHT MODE - DESKTOP */
+@media (min-width: 769px) {
+  body.light-mode .nav-links a { color: #222; }
+  body.light-mode .nav-links a:hover,
+  body.light-mode .nav-links a.active { color: #8B0000; }
+}
+
+/* NAVBAR LIGHT MODE - MOBILE */
+@media (max-width: 768px) {
+  body.light-mode .nav-links { background: #1f1f1f; }
+  body.light-mode .nav-links a { color: #fff; }
+  body.light-mode .nav-links a:hover,
+  body.light-mode .nav-links a.active { color: #8B0000; }
+}
 
 /* ---------------------------------
    NAVBAR
@@ -160,6 +171,7 @@ footer { background: #1f1f1f; padding: 2rem 0; text-align: center; }
 .particles span { position: absolute; display: block; width: 20px; height: 20px; background: rgba(178,34,34,0.7); border-radius: 50%; animation: floatParticles linear infinite; opacity: 0.6; }
 
 @keyframes floatParticles { 0% { transform: translateY(100vh) scale(0.5); } 100% { transform: translateY(-10vh) scale(1); } }
+
 /* ---------------------------------
    CONTACT RESPONSIVE
 ----------------------------------- */
@@ -173,5 +185,3 @@ footer { background: #1f1f1f; padding: 2rem 0; text-align: center; }
   .contact .socials { flex-direction: column; gap: 0.75rem; margin-top: 1rem; }
   .contact .socials a { width: 100%; text-align: center; padding: 0.7rem 0; }
 }
-
-
