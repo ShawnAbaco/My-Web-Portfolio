@@ -31,10 +31,21 @@ body.light-mode .hamburger {
   color: #000; /* hamburger button turns black */
 }
 
-/* Keep mobile nav links white in light mode */
+/* Mobile nav links in light mode */
 body.light-mode .nav-links a {
   color: #fff; /* links remain white */
 }
+
+/* Hover effect for mobile nav links */
+body.light-mode .nav-links a:hover {
+  color: #fff; /* still white on hover */
+}
+
+/* Active link stays maroon in light mode */
+body.light-mode .nav-links a.active {
+  color: #8B0000; /* selected link is maroon */
+}
+
 
 
 
@@ -167,4 +178,5 @@ footer { background: #1f1f1f; padding: 2rem 0; text-align: center; }
   0% { transform: translateY(100vh) scale(0.5); }
   100% { transform: translateY(-10vh) scale(1); }
 }
+
 
