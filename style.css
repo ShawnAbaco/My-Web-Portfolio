@@ -276,3 +276,26 @@ footer { background: #1f1f1f; padding: 2rem 0; text-align: center; }
   transition: none; /* remove hover transition */
 }  .marquee-label { font-size: 1.5rem; }
 }
+
+
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#playPauseBtn {
+  padding: 10px 20px;
+  border: none;
+  background: #ff4b5c;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#playPauseBtn:hover {
+  background: #ff2a3d;
+}

@@ -53,6 +53,13 @@
     </div>
   </section>
 
+  <!-- Music Player -->
+<div class="music-player">
+  <button id="playPauseBtn">▶️ Play Music</button>
+  <audio id="backgroundMusic" src="audio/my-music.mp3"></audio>
+</div>
+
+
   <!-- About Section -->
   <section id="about" class="about" data-animate>
     <div class="container about-grid">
@@ -273,6 +280,21 @@ for (let i = 0; i < particleCount; i++) {
   particle.style.animationDelay = `${Math.random() * 5}s`;
   particleContainer.appendChild(particle);
 }
+
+
+const playPauseBtn = document.getElementById('playPauseBtn');
+const backgroundMusic = document.getElementById('backgroundMusic');
+
+playPauseBtn.addEventListener('click', () => {
+  if (backgroundMusic.paused) {
+    backgroundMusic.play();
+    playPauseBtn.textContent = '⏸ Pause Music';
+  } else {
+    backgroundMusic.pause();
+    playPauseBtn.textContent = '▶️ Play Music';
+  }
+});
+
 
   </script>
 
